@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "XMLElement.hasAttribute(String) -&gt; Bool:XMLElement.swift">
+      </ContextState>
+      <ContextState
+         contextName = "XMLRemoveStringRule.(applyRuleOnElementContent in _184DC56B1B00E1431BB29F78E5E3ED5D)(XMLElement) -&gt; XMLElement:XMLRemoveStringRule.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "element.tag.tag">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
