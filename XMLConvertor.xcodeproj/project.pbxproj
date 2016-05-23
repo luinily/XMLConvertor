@@ -28,7 +28,6 @@
 		8F24C1F41CF1AFC9005592F8 /* XMLTextContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F24C1F31CF1AFC9005592F8 /* XMLTextContent.swift */; };
 		8F24C1F61CF1B015005592F8 /* XMLElementContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F24C1F51CF1B015005592F8 /* XMLElementContent.swift */; };
 		8F24C1FA1CF1B084005592F8 /* XMLAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F24C1F91CF1B084005592F8 /* XMLAttribute.swift */; };
-		8F24C1FC1CF1B0BE005592F8 /* XMLReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F24C1FB1CF1B0BE005592F8 /* XMLReader.swift */; };
 		8F24C2001CF1B3A4005592F8 /* XMLContentTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F24C1FF1CF1B3A4005592F8 /* XMLContentTest.swift */; };
 		8F24C2021CF1BB1A005592F8 /* XMLTagTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F24C2011CF1BB1A005592F8 /* XMLTagTest.swift */; };
 		8F24C2041CF1BBA1005592F8 /* XMLAttributeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F24C2031CF1BBA1005592F8 /* XMLAttributeTest.swift */; };
@@ -88,7 +87,6 @@
 		8F24C1F31CF1AFC9005592F8 /* XMLTextContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLTextContent.swift; sourceTree = "<group>"; };
 		8F24C1F51CF1B015005592F8 /* XMLElementContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLElementContent.swift; sourceTree = "<group>"; };
 		8F24C1F91CF1B084005592F8 /* XMLAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLAttribute.swift; sourceTree = "<group>"; };
-		8F24C1FB1CF1B0BE005592F8 /* XMLReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLReader.swift; sourceTree = "<group>"; };
 		8F24C1FF1CF1B3A4005592F8 /* XMLContentTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLContentTest.swift; sourceTree = "<group>"; };
 		8F24C2011CF1BB1A005592F8 /* XMLTagTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XMLTagTest.swift; path = XMLConvertorTests/XMLTagTest.swift; sourceTree = SOURCE_ROOT; };
 		8F24C2031CF1BBA1005592F8 /* XMLAttributeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLAttributeTest.swift; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 				8F24C1F31CF1AFC9005592F8 /* XMLTextContent.swift */,
 				8F24C1F51CF1B015005592F8 /* XMLElementContent.swift */,
 				8F24C1F91CF1B084005592F8 /* XMLAttribute.swift */,
-				8F24C1FB1CF1B0BE005592F8 /* XMLReader.swift */,
 				8F0231D11CF345D900DAA5E9 /* XMLParser.swift */,
 				8F0231CD1CF3218200DAA5E9 /* XMLElementContainer.swift */,
 				8F0231D31CF3597800DAA5E9 /* XMLStringWriter.swift */,
@@ -349,7 +346,6 @@
 				8F0231D41CF3597800DAA5E9 /* XMLStringWriter.swift in Sources */,
 				8F24C1EC1CF1AE15005592F8 /* XMLElement.swift in Sources */,
 				8F24C1F01CF1AE6C005592F8 /* XMLTag.swift in Sources */,
-				8F24C1FC1CF1B0BE005592F8 /* XMLReader.swift in Sources */,
 				8F24C2121CF214E6005592F8 /* XMLRemoveStringRule.swift in Sources */,
 				8F24C1EA1CF1ADD8005592F8 /* XMLObject.swift in Sources */,
 				8F0231D21CF345D900DAA5E9 /* XMLParser.swift in Sources */,
