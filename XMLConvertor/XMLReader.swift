@@ -8,9 +8,10 @@
 
 import Foundation
 
-class XMLReader {
-	
+class XMLReader: NSObject {
+		
 //	func readXML(url: String) -> XMLObject {
 //		
 //	}
 }
+

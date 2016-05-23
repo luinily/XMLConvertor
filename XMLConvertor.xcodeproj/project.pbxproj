@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		8F0231CE1CF3218200DAA5E9 /* XMLElementContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0231CD1CF3218200DAA5E9 /* XMLElementContainer.swift */; };
+		8F0231D01CF33D7B00DAA5E9 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0231CF1CF33D7B00DAA5E9 /* libxml2.2.tbd */; };
+		8F0231D21CF345D900DAA5E9 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0231D11CF345D900DAA5E9 /* XMLParser.swift */; };
+		8F0231D41CF3597800DAA5E9 /* XMLStringWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0231D31CF3597800DAA5E9 /* XMLStringWriter.swift */; };
+		8F0231D61CF359B800DAA5E9 /* XMLElementStringWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0231D51CF359B800DAA5E9 /* XMLElementStringWriter.swift */; };
+		8F0231D81CF35B2700DAA5E9 /* XMLElementStringWritterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0231D71CF35B2700DAA5E9 /* XMLElementStringWritterTest.swift */; };
 		8F24C1B91CF1ADAC005592F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F24C1B81CF1ADAC005592F8 /* AppDelegate.swift */; };
 		8F24C1BB1CF1ADAC005592F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F24C1BA1CF1ADAC005592F8 /* ViewController.swift */; };
 		8F24C1BE1CF1ADAC005592F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F24C1BC1CF1ADAC005592F8 /* Main.storyboard */; };
@@ -57,6 +62,11 @@
 
 /* Begin PBXFileReference section */
 		8F0231CD1CF3218200DAA5E9 /* XMLElementContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLElementContainer.swift; sourceTree = "<group>"; };
+		8F0231CF1CF33D7B00DAA5E9 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		8F0231D11CF345D900DAA5E9 /* XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
+		8F0231D31CF3597800DAA5E9 /* XMLStringWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLStringWriter.swift; sourceTree = "<group>"; };
+		8F0231D51CF359B800DAA5E9 /* XMLElementStringWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLElementStringWriter.swift; sourceTree = "<group>"; };
+		8F0231D71CF35B2700DAA5E9 /* XMLElementStringWritterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XMLElementStringWritterTest.swift; path = XMLConvertorTests/XMLElementStringWritterTest.swift; sourceTree = SOURCE_ROOT; };
 		8F24C1B51CF1ADAC005592F8 /* XMLConvertor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMLConvertor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F24C1B81CF1ADAC005592F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F24C1BA1CF1ADAC005592F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F0231D01CF33D7B00DAA5E9 /* libxml2.2.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +132,7 @@
 		8F24C1AC1CF1ADAB005592F8 = {
 			isa = PBXGroup;
 			children = (
+				8F0231CF1CF33D7B00DAA5E9 /* libxml2.2.tbd */,
 				8F24C1B71CF1ADAC005592F8 /* XMLConvertor */,
 				8F24C1CF1CF1ADAC005592F8 /* XMLConvertorTests */,
 				8F24C1DA1CF1ADAC005592F8 /* XMLConvertorUITests */,
@@ -155,7 +167,10 @@
 				8F24C1F51CF1B015005592F8 /* XMLElementContent.swift */,
 				8F24C1F91CF1B084005592F8 /* XMLAttribute.swift */,
 				8F24C1FB1CF1B0BE005592F8 /* XMLReader.swift */,
+				8F0231D11CF345D900DAA5E9 /* XMLParser.swift */,
 				8F0231CD1CF3218200DAA5E9 /* XMLElementContainer.swift */,
+				8F0231D31CF3597800DAA5E9 /* XMLStringWriter.swift */,
+				8F0231D51CF359B800DAA5E9 /* XMLElementStringWriter.swift */,
 				8F24C1BC1CF1ADAC005592F8 /* Main.storyboard */,
 				8F24C1C21CF1ADAC005592F8 /* Assets.xcassets */,
 				8F24C1C41CF1ADAC005592F8 /* LaunchScreen.storyboard */,
@@ -177,6 +192,7 @@
 				8F24C20D1CF2138F005592F8 /* XMLConvertorTest.swift */,
 				8F24C2131CF2159E005592F8 /* XMLRemoveStringRuleTest.swift */,
 				8F24C2151CF22BD8005592F8 /* XMLObjectTest.swift */,
+				8F0231D71CF35B2700DAA5E9 /* XMLElementStringWritterTest.swift */,
 				8F24C1D21CF1ADAC005592F8 /* Info.plist */,
 			);
 			path = XMLConvertorTests;
@@ -323,17 +339,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F24C1F41CF1AFC9005592F8 /* XMLTextContent.swift in Sources */,
+				8F0231D61CF359B800DAA5E9 /* XMLElementStringWriter.swift in Sources */,
 				8F24C1C11CF1ADAC005592F8 /* XMLConvertor.xcdatamodeld in Sources */,
 				8F0231CE1CF3218200DAA5E9 /* XMLElementContainer.swift in Sources */,
 				8F24C1BB1CF1ADAC005592F8 /* ViewController.swift in Sources */,
 				8F24C1EE1CF1AE58005592F8 /* XMLPart.swift in Sources */,
 				8F24C1F61CF1B015005592F8 /* XMLElementContent.swift in Sources */,
 				8F24C20C1CF2137B005592F8 /* XMLConvertor.swift in Sources */,
+				8F0231D41CF3597800DAA5E9 /* XMLStringWriter.swift in Sources */,
 				8F24C1EC1CF1AE15005592F8 /* XMLElement.swift in Sources */,
 				8F24C1F01CF1AE6C005592F8 /* XMLTag.swift in Sources */,
 				8F24C1FC1CF1B0BE005592F8 /* XMLReader.swift in Sources */,
 				8F24C2121CF214E6005592F8 /* XMLRemoveStringRule.swift in Sources */,
 				8F24C1EA1CF1ADD8005592F8 /* XMLObject.swift in Sources */,
+				8F0231D21CF345D900DAA5E9 /* XMLParser.swift in Sources */,
 				8F24C1B91CF1ADAC005592F8 /* AppDelegate.swift in Sources */,
 				8F24C1FA1CF1B084005592F8 /* XMLAttribute.swift in Sources */,
 				8F24C1F21CF1AF92005592F8 /* XMLContent.swift in Sources */,
@@ -352,6 +371,7 @@
 				8F24C2161CF22BD8005592F8 /* XMLObjectTest.swift in Sources */,
 				8F24C2061CF1BCBB005592F8 /* XMLElementTest.swift in Sources */,
 				8F24C2041CF1BBA1005592F8 /* XMLAttributeTest.swift in Sources */,
+				8F0231D81CF35B2700DAA5E9 /* XMLElementStringWritterTest.swift in Sources */,
 				8F24C2141CF2159E005592F8 /* XMLRemoveStringRuleTest.swift in Sources */,
 				8F24C2081CF1BEB2005592F8 /* XMLTextContentTest.swift in Sources */,
 			);

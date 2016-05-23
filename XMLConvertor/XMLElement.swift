@@ -10,8 +10,17 @@ import Foundation
 
 extension XMLElement: Equatable { }
 func == (lhs: XMLElement, rhs: XMLElement) -> Bool {
-	return (lhs.tag == rhs.tag) && (lhs.attributes == rhs.attributes) && (lhs.content.equals(rhs.content))
+	if lhs.hasContent != rhs.hasContent {
+		return false
+	}
 	
+	if let lhsContent = lhs.content, rhsContent = rhs.content {
+		if !lhsContent.equals(rhsContent) {
+			return false
+		}
+	}
+	
+	return (lhs.tag == rhs.tag) && (lhs.attributes == rhs.attributes)
 }
 
 extension XMLElement: XMLPart { }
@@ -20,12 +29,19 @@ struct XMLElement {
 	var tag: XMLTag
 	var attributes = [XMLAttribute]()
 	var attributesCount: Int {return attributes.count}
-	var content: XMLContent
+	var content: XMLContent?
+	var hasContent: Bool {return content != nil}
 	
 	init(tag: XMLTag, attributes: [XMLAttribute], content: XMLContent) {
 		self.tag = tag
 		self.attributes = attributes
 		self.content = content
+	}
+	
+	init(tag: XMLTag, attributes: [XMLAttribute]) {
+		self.tag = tag
+		self.attributes = attributes
+		self.content = nil
 	}
 	
 	mutating func tryAddAttribute(attribute: XMLAttribute) -> Bool {

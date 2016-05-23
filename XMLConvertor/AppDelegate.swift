@@ -13,11 +13,29 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
-
+	private var _xmlParser: XMLParser?
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
 		return true
+	}
+	
+	func convertXML(url: NSURL, stringToRemove: String, completionHandler: (xmlObject: XMLObject) -> Void) {
+		importXML(url) {
+			xmlObject in
+			self._xmlParser = nil
+			
+			let rule = XMLRemoveStringRule(stringToRemove: stringToRemove)
+			let xmlConvertor = XMLConvertor(rules: [rule])
+			let convertedXMLObject = xmlConvertor.convert(xmlObject)
+			completionHandler(xmlObject: convertedXMLObject)
+		}
+		
+	}
+	
+	private func importXML(url: NSURL, completionHandler: (xmlObject: XMLObject) -> Void) {
+			_xmlParser = XMLParser()
+			_xmlParser?.readXML(url, completionHandler: completionHandler)
 	}
 
 	func applicationWillResignActive(application: UIApplication) {
