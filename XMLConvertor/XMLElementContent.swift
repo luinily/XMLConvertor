@@ -8,6 +8,24 @@
 
 import Foundation
 
+extension XMLElementContent: XMLElementContainer {
+	func getElements() -> [XMLElement] {
+		return elements
+	}
+	
+	func getElementsCount() -> Int {
+		return elements.count
+	}
+	
+	mutating func addElement(element: XMLElement) {
+		elements.append(element)
+	}
+	
+	mutating func removeAll() {
+		elements.removeAll()
+	}
+}
+
 extension XMLElementContent: Equatable { }
 func == (lhs: XMLElementContent, rhs: XMLElementContent) -> Bool {
 	if lhs.elements.count != rhs.elements.count {
@@ -39,10 +57,6 @@ struct XMLElementContent {
 		self.elements = [XMLElement]()
 	}
 	
-	mutating func addElement(element: XMLElement) {
-		elements.append(element)
-	}
-	
 	mutating func removeElement(elementToRemove: XMLElement) {
 		var removedElement = true
 		while removedElement {
@@ -63,9 +77,5 @@ struct XMLElementContent {
 			return true
 		}
 		return false
-	}
-	
-	func containsElement(element: XMLElement) -> Bool {
-		return elements.contains(element)
 	}
 }

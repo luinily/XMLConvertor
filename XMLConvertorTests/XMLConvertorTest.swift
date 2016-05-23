@@ -26,7 +26,7 @@ class XMLConvertorTest: XCTestCase {
 		
 		func applyRule(xmlPart: XMLPart) -> XMLPart {
 			didCallRule = true
-			let tag = XMLTag(tag: "tag")
+			let tag = XMLTag(name: "tag")
 			let attribute = XMLAttribute(attribute: "attribute", value: "value")
 			let attributes = [attribute]
 			let content = XMLTextContent(text: "content")
@@ -52,7 +52,7 @@ class XMLConvertorTest: XCTestCase {
 		let resultXMLObject = convertor.convert(xmlObject)
 		
 		if let resultElement = resultXMLObject.elements.first {
-			XCTAssertEqual(resultElement.tag.tag, "tag")
+			XCTAssertEqual(resultElement.tag.name, "tag")
 		}
 	}
 

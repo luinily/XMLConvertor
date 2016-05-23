@@ -22,7 +22,7 @@ class XMLRemoveStringRuleTest: XCTestCase {
     }
 
     func testApplyRule_removeAttribute_Name() {
-		let tag = XMLTag(tag: "tag")
+		let tag = XMLTag(name: "tag")
 		let attribute1 = XMLAttribute(attribute: "attribute", value: "value")
 		let attribute2 = XMLAttribute(attribute: "attribute2", value: "value2")
 		let attribute3 = XMLAttribute(attribute: "attribute3", value: "value3")
@@ -41,7 +41,7 @@ class XMLRemoveStringRuleTest: XCTestCase {
     }
 	
 	func testApplyRule_removeAttribute_Value() {
-		let tag = XMLTag(tag: "tag")
+		let tag = XMLTag(name: "tag")
 		let attribute1 = XMLAttribute(attribute: "attribute", value: "value")
 		let attribute2 = XMLAttribute(attribute: "attribute2", value: "value2")
 		let attribute3 = XMLAttribute(attribute: "attribute3", value: "value3")
@@ -60,7 +60,7 @@ class XMLRemoveStringRuleTest: XCTestCase {
 	
 	func testApplyRule_removeFromContent_Text() {
 		// With
-		let tag = XMLTag(tag: "tag")
+		let tag = XMLTag(name: "tag")
 		let attribute = XMLAttribute(attribute: "attribute", value: "value")
 		let attributes = [attribute]
 		let content = XMLTextContent(text: "content content2 content3")
@@ -83,13 +83,13 @@ class XMLRemoveStringRuleTest: XCTestCase {
 	
 	func testApplyRule_removeFromContent_Element() {
 		// With
-		let tag = XMLTag(tag: "tag")
+		let tag = XMLTag(name: "tag")
 		let attribute = XMLAttribute(attribute: "attribute", value: "value")
 		let attributes = [attribute]
 		let content = XMLTextContent(text: "content")
 		let elementA = XMLElement(tag: tag, attributes: attributes, content: content)
 		
-		let tagB = XMLTag(tag: "tagB")
+		let tagB = XMLTag(name: "tagB")
 		let elementB = XMLElement(tag: tagB, attributes: attributes, content: content)
 		
 		let elementContent = XMLElementContent(elements: [elementA, elementB])
@@ -111,13 +111,13 @@ class XMLRemoveStringRuleTest: XCTestCase {
 	
 	func textApplyRule_removeFromXMLObject() {
 		// With
-		let tag = XMLTag(tag: "tag")
+		let tag = XMLTag(name: "tag")
 		let attribute = XMLAttribute(attribute: "attribute", value: "value")
 		let attributes = [attribute]
 		let content = XMLTextContent(text: "content")
 		let elementA = XMLElement(tag: tag, attributes: attributes, content: content)
 		
-		let tagB = XMLTag(tag: "tagB")
+		let tagB = XMLTag(name: "tagB")
 		let elementB = XMLElement(tag: tagB, attributes: attributes, content: content)
 		
 		let xmlObject = XMLObject(elements: [elementA, elementB])
@@ -134,11 +134,71 @@ class XMLRemoveStringRuleTest: XCTestCase {
 		XCTAssert(false)
 	}
 
+	func testRuledAppliedToElementsInXMLObject() {
+		// With
+		let tag = XMLTag(name: "tag")
+		let attribute = XMLAttribute(attribute: "attribute", value: "value")
+		let attributes = [attribute]
+		let content = XMLTextContent(text: "content string to remove")
+		let elementA = XMLElement(tag: tag, attributes: attributes, content: content)
+		
+		let tagB = XMLTag(name: "tagB")
+		let elementB = XMLElement(tag: tagB, attributes: attributes, content: content)
+		
+		let xmlObject = XMLObject(elements: [elementA, elementB])
+		
+		// When
+		let rule = XMLRemoveStringRule(stringToRemove: " string to remove")
+		
+		// Then
+		if let result = rule.applyRule(xmlObject) as? XMLObject {
+			let element = result.elements.first
+			if let elementContent = element?.content as? XMLTextContent {
+				XCTAssertEqual(elementContent.text, "content")
+			}
+			return
+		}
+		
+		XCTAssert(false)
+	}
+	
+	func testRuleAppliedToElementsInElementContent() {
+		// With
+		let tag = XMLTag(name: "tag")
+		let attribute = XMLAttribute(attribute: "attribute", value: "value")
+		let attributes = [attribute]
+		let content = XMLTextContent(text: "content string to remove")
+		let elementA = XMLElement(tag: tag, attributes: attributes, content: content)
+		
+		let tagB = XMLTag(name: "tagB")
+		let elementB = XMLElement(tag: tagB, attributes: attributes, content: content)
+		
+		let xmlElementContent = XMLElementContent(elements: [elementA, elementB])
+		let element = XMLElement(tag: tag, attributes: attributes, content: xmlElementContent)
+		// When
+		let rule = XMLRemoveStringRule(stringToRemove: " string to remove")
+		
+		// Then
+		if let resultElement = rule.applyRule(element) as? XMLElement {
+			if let elementContent = resultElement.content as? XMLElementContent {
+				let element = elementContent.elements.first
+				if let elementContent = element?.content as? XMLTextContent {
+					XCTAssertEqual(elementContent.text, "content")
+				}
+			}
+			return
+		}
+		
+		XCTAssert(false)
+	}
+	
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock {
             // Put the code you want to measure the time of here.
         }
     }
+	
+	
 
 }

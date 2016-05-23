@@ -22,7 +22,7 @@ class XMLElementTest: XCTestCase {
     }
     
 	func testEquatable_Equals_TextContent() {
-		let tag = XMLTag(tag: "tag")
+		let tag = XMLTag(name: "tag")
 		let attribute = XMLAttribute(attribute: "attribute", value: "value")
 		let attributes = [attribute]
 		let content = XMLTextContent(text: "content")
@@ -34,11 +34,11 @@ class XMLElementTest: XCTestCase {
 	}
 	
 	func testEquatable_Equals_ElementContent() {
-		let tag = XMLTag(tag: "tag")
+		let tag = XMLTag(name: "tag")
 		let attribute = XMLAttribute(attribute: "attribute", value: "value")
 		let attributes = [attribute]
 		
-		let elementTag = XMLTag(tag: "elementTag")
+		let elementTag = XMLTag(name: "elementTag")
 		let elementAttribute = XMLAttribute(attribute: "elementAttribute", value: "elementValue")
 		let elementAttributes = [elementAttribute]
 		let elementContent = XMLTextContent(text: "elementContent")
@@ -55,13 +55,13 @@ class XMLElementTest: XCTestCase {
 	}
 	
 	func testEquatable_notEquals() {
-		let aTag = XMLTag(tag: "aTag")
+		let aTag = XMLTag(name: "aTag")
 		let aAttribute = XMLAttribute(attribute: "aAttribute", value: "aValue")
 		let aAttributes = [aAttribute]
 		let aContent = XMLTextContent(text: "aContent")
 		let a = XMLElement(tag: aTag, attributes: aAttributes, content: aContent)
 		
-		let bTag = XMLTag(tag: "bTag")
+		let bTag = XMLTag(name: "bTag")
 		let bAttribute = XMLAttribute(attribute: "bAttribute", value: "bValue")
 		let bAttributes = [bAttribute]
 		let bContent = XMLTextContent(text: "bContent")
@@ -71,13 +71,13 @@ class XMLElementTest: XCTestCase {
 	}
 	
 	func testEquatable_notSameContentType() {
-		let tag = XMLTag(tag: "tag")
+		let tag = XMLTag(name: "tag")
 		let attribute = XMLAttribute(attribute: "attribute", value: "value")
 		let attributes = [attribute]
 		let content = XMLTextContent(text: "content")
 		let a = XMLElement(tag: tag, attributes: attributes, content: content)
 		
-		let bTag = XMLTag(tag: "bTag")
+		let bTag = XMLTag(name: "bTag")
 		let bAttribute = XMLAttribute(attribute: "bAttribute", value: "bValue")
 		let bAttributes = [bAttribute]
 		let bContent = XMLTextContent(text: "bContent")
@@ -87,7 +87,7 @@ class XMLElementTest: XCTestCase {
 	}
 	
 	func testEquatable_differentAttributescount() {
-		let tag = XMLTag(tag: "tag")
+		let tag = XMLTag(name: "tag")
 		let attribute = XMLAttribute(attribute: "attribute", value: "value")
 		var attributes = [attribute]
 		let content = XMLTextContent(text: "content")
@@ -101,7 +101,7 @@ class XMLElementTest: XCTestCase {
 	}
 	
 	func testAddAttribute() {
-		let tag = XMLTag(tag: "tag")
+		let tag = XMLTag(name: "tag")
 		let attribute = XMLAttribute(attribute: "attribute", value: "value")
 		let attributes = [XMLAttribute]()
 		let content = XMLTextContent(text: "content")
@@ -113,7 +113,7 @@ class XMLElementTest: XCTestCase {
 	
 	func testRemoveAttribute() {
 		//Giver
-		let tag = XMLTag(tag: "tag")
+		let tag = XMLTag(name: "tag")
 		let attribute = XMLAttribute(attribute: "attribute", value: "value")
 		let attribute2 = XMLAttribute(attribute: "attribute2", value: "value2")
 		let attributes = [attribute, attribute2]
@@ -128,7 +128,7 @@ class XMLElementTest: XCTestCase {
 	}
 	
 	func testCannotAddSameAttribute() {
-		let tag = XMLTag(tag: "tag")
+		let tag = XMLTag(name: "tag")
 		let attribute = XMLAttribute(attribute: "attribute", value: "value")
 		let attributes = [attribute]
 		let content = XMLTextContent(text: "content")
@@ -140,7 +140,7 @@ class XMLElementTest: XCTestCase {
 	}
 	
 	func testHasAttribute_true() {
-		let tag = XMLTag(tag: "tag")
+		let tag = XMLTag(name: "tag")
 		let attribute = XMLAttribute(attribute: "attribute", value: "value")
 		let attributes = [attribute]
 		let content = XMLTextContent(text: "content")
@@ -152,7 +152,7 @@ class XMLElementTest: XCTestCase {
 	}
 	
 	func testHasAttribute_false() {
-		let tag = XMLTag(tag: "tag")
+		let tag = XMLTag(name: "tag")
 		let attribute = XMLAttribute(attribute: "attribute", value: "value")
 		let attributes = [attribute]
 		let content = XMLTextContent(text: "content")

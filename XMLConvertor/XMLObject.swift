@@ -10,14 +10,24 @@ import Foundation
 
 extension XMLObject: XMLPart {}
 
-struct XMLObject {
-	var elements = [XMLElement]()
+extension XMLObject: XMLElementContainer {
+	func getElements() -> [XMLElement] {
+		return elements
+	}
+	
+	func getElementsCount() -> Int {
+		return elements.count
+	}
 	
 	mutating func addElement(element: XMLElement) {
 		elements.append(element)
 	}
 	
-	func containsElement(element: XMLElement) -> Bool {
-		return elements.contains(element)
+	mutating func removeAll() {
+		elements.removeAll()
 	}
+}
+
+struct XMLObject {
+	var elements = [XMLElement]()
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F0231CE1CF3218200DAA5E9 /* XMLElementContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0231CD1CF3218200DAA5E9 /* XMLElementContainer.swift */; };
 		8F24C1B91CF1ADAC005592F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F24C1B81CF1ADAC005592F8 /* AppDelegate.swift */; };
 		8F24C1BB1CF1ADAC005592F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F24C1BA1CF1ADAC005592F8 /* ViewController.swift */; };
 		8F24C1BE1CF1ADAC005592F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F24C1BC1CF1ADAC005592F8 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F0231CD1CF3218200DAA5E9 /* XMLElementContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLElementContainer.swift; sourceTree = "<group>"; };
 		8F24C1B51CF1ADAC005592F8 /* XMLConvertor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMLConvertor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F24C1B81CF1ADAC005592F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F24C1BA1CF1ADAC005592F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				8F24C1F51CF1B015005592F8 /* XMLElementContent.swift */,
 				8F24C1F91CF1B084005592F8 /* XMLAttribute.swift */,
 				8F24C1FB1CF1B0BE005592F8 /* XMLReader.swift */,
+				8F0231CD1CF3218200DAA5E9 /* XMLElementContainer.swift */,
 				8F24C1BC1CF1ADAC005592F8 /* Main.storyboard */,
 				8F24C1C21CF1ADAC005592F8 /* Assets.xcassets */,
 				8F24C1C41CF1ADAC005592F8 /* LaunchScreen.storyboard */,
@@ -321,6 +324,7 @@
 			files = (
 				8F24C1F41CF1AFC9005592F8 /* XMLTextContent.swift in Sources */,
 				8F24C1C11CF1ADAC005592F8 /* XMLConvertor.xcdatamodeld in Sources */,
+				8F0231CE1CF3218200DAA5E9 /* XMLElementContainer.swift in Sources */,
 				8F24C1BB1CF1ADAC005592F8 /* ViewController.swift in Sources */,
 				8F24C1EE1CF1AE58005592F8 /* XMLPart.swift in Sources */,
 				8F24C1F61CF1B015005592F8 /* XMLElementContent.swift in Sources */,
@@ -571,6 +575,7 @@
 				8F24C1E21CF1ADAC005592F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F24C1E31CF1ADAC005592F8 /* Build configuration list for PBXNativeTarget "XMLConvertorTests" */ = {
 			isa = XCConfigurationList;
@@ -579,6 +584,7 @@
 				8F24C1E51CF1ADAC005592F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F24C1E61CF1ADAC005592F8 /* Build configuration list for PBXNativeTarget "XMLConvertorUITests" */ = {
 			isa = XCConfigurationList;
@@ -587,6 +593,7 @@
 				8F24C1E81CF1ADAC005592F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

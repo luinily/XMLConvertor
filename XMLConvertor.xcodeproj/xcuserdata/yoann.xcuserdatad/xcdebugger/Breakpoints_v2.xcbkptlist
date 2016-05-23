@@ -23,22 +23,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XMLConvertor/XMLObject.swift"
-            timestampString = "485633266.058763"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "addElement(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "XMLConvertorTests/XMLElementTest.swift"
             timestampString = "485625656.862398"
             startingColumnNumber = "9223372036854775807"
@@ -278,11 +262,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XMLConvertor/XMLRemoveStringRule.swift"
-            timestampString = "485630598.264649"
+            timestampString = "485698771.115649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "applyRuleOnTextAttribute(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -294,11 +278,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XMLConvertor/XMLRemoveStringRule.swift"
-            timestampString = "485630598.264649"
+            timestampString = "485698771.115649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "applyRuleOnTextAttribute(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -309,14 +293,61 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XMLConvertor/XMLRemoveStringRule.swift"
-            timestampString = "485632210.000486"
+            filePath = "XMLConvertorTests/XMLRemoveStringRuleTest.swift"
+            timestampString = "485698480.613943"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "applyRuleOnElementContent(_:)"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "testRuledAppliedToElementsInXMLObject()"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "XMLConvertorTests.XMLRemoveStringRuleTest.testRuledAppliedToElementsInXMLObject () -&gt; ()"
+                  moduleName = "XMLConvertorTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yoann/Documents/Dev/XMLConvertor/XMLConvertor/XMLConvertorTests/XMLRemoveStringRuleTest.swift"
+                  timestampString = "485698487.319197"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "157"
+                  endingLineNumber = "157"
+                  offsetFromSymbolStart = "3276">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "XMLConvertorTests.XMLRemoveStringRuleTest.(testRuledAppliedToElementsInXMLObject () -&gt; ()).(implicit closure #1)"
+                  moduleName = "XMLConvertorTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yoann/Documents/Dev/XMLConvertor/XMLConvertor/XMLConvertorTests/XMLRemoveStringRuleTest.swift"
+                  timestampString = "485698487.319448"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "157"
+                  endingLineNumber = "157"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "XMLConvertorTests.XMLRemoveStringRuleTest.(testRuledAppliedToElementsInXMLObject () -&gt; ()).(implicit closure #2)"
+                  moduleName = "XMLConvertorTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yoann/Documents/Dev/XMLConvertor/XMLConvertor/XMLConvertorTests/XMLRemoveStringRuleTest.swift"
+                  timestampString = "485698487.319689"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "157"
+                  endingLineNumber = "157"
+                  offsetFromSymbolStart = "33">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

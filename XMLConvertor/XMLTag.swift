@@ -13,7 +13,7 @@ extension XMLTag: Equatable {
 }
 
 func == (lhs: XMLTag, rhs: XMLTag) -> Bool {
-	return (lhs.tag == rhs.tag)
+	return (lhs.name == rhs.name)
 	
 }
 
@@ -22,9 +22,9 @@ extension XMLTag: XMLPart {
 }
 
 struct XMLTag {
-	var tag: String
+	var name: String
 	
-	init(tag: String) {
-		self.tag = tag
+	init(name: String) {
+		self.name = name
 	}
 }

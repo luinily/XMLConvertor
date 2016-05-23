@@ -22,7 +22,7 @@ class XMLElementContentTest: XCTestCase {
     }
 	
 	func testEquatable_Equals_TextContent() {
-		let tag = XMLTag(tag: "tag")
+		let tag = XMLTag(name: "tag")
 		let attribute = XMLAttribute(attribute: "attribute", value: "value")
 		let attributes = [attribute]
 		let content = XMLTextContent(text: "content")
@@ -36,7 +36,7 @@ class XMLElementContentTest: XCTestCase {
 	}
 	
 	func testEquatable_notEquals() {
-		let aTag = XMLTag(tag: "aTag")
+		let aTag = XMLTag(name: "aTag")
 		let aAttribute = XMLAttribute(attribute: "aAttribute", value: "aValue")
 		let aAttributes = [aAttribute]
 		let aContent = XMLTextContent(text: "aContent")
@@ -44,7 +44,7 @@ class XMLElementContentTest: XCTestCase {
 		var a = XMLElementContent()
 		a.addElement(aElement)
 		
-		let bTag = XMLTag(tag: "bTag")
+		let bTag = XMLTag(name: "bTag")
 		let bAttribute = XMLAttribute(attribute: "bAttribute", value: "bValue")
 		let bAttributes = [bAttribute]
 		let bContent = XMLTextContent(text: "bContent")
@@ -56,7 +56,7 @@ class XMLElementContentTest: XCTestCase {
 	}
 	
 	func testEquatable_differentElementCount() {
-		let tag = XMLTag(tag: "tag")
+		let tag = XMLTag(name: "tag")
 		let attribute = XMLAttribute(attribute: "attribute", value: "value")
 		let attributes = [attribute]
 		let content = XMLTextContent(text: "content")
@@ -72,13 +72,13 @@ class XMLElementContentTest: XCTestCase {
 	}
 	
 	func testRemoveElement() {
-		let tag = XMLTag(tag: "tag")
+		let tag = XMLTag(name: "tag")
 		let attribute = XMLAttribute(attribute: "attribute", value: "value")
 		let attributes = [attribute]
 		let content = XMLTextContent(text: "content")
 		let element = XMLElement(tag: tag, attributes: attributes, content: content)
 		var elementB = element
-		elementB.tag = XMLTag(tag: "tagB")
+		elementB.tag = XMLTag(name: "tagB")
 		let elements = [element, elementB, element]
 		
 		var elementContent = XMLElementContent(elements: elements)
@@ -88,7 +88,7 @@ class XMLElementContentTest: XCTestCase {
 	}
 	
 	func testAddElement() {
-		let tag = XMLTag(tag: "tag")
+		let tag = XMLTag(name: "tag")
 		let attribute = XMLAttribute(attribute: "attribute", value: "value")
 		let attributes = [attribute]
 		let content = XMLTextContent(text: "content")
@@ -102,13 +102,13 @@ class XMLElementContentTest: XCTestCase {
 	}
 	
 	func testContainsElement_true() {
-		let tag = XMLTag(tag: "tag")
+		let tag = XMLTag(name: "tag")
 		let attribute = XMLAttribute(attribute: "attribute", value: "value")
 		let attributes = [attribute]
 		let content = XMLTextContent(text: "content")
 		let element = XMLElement(tag: tag, attributes: attributes, content: content)
 		var elementB = element
-		elementB.tag = XMLTag(tag: "tagB")
+		elementB.tag = XMLTag(name: "tagB")
 		let elements = [element, elementB, element]
 		
 		let elementContent = XMLElementContent(elements: elements)
@@ -117,13 +117,13 @@ class XMLElementContentTest: XCTestCase {
 	}
 	
 	func testContainsElement_false() {
-		let tag = XMLTag(tag: "tag")
+		let tag = XMLTag(name: "tag")
 		let attribute = XMLAttribute(attribute: "attribute", value: "value")
 		let attributes = [attribute]
 		let content = XMLTextContent(text: "content")
 		let element = XMLElement(tag: tag, attributes: attributes, content: content)
 		var elementB = element
-		elementB.tag = XMLTag(tag: "tagB")
+		elementB.tag = XMLTag(name: "tagB")
 		let elements = [element, element]
 		
 		let elementContent = XMLElementContent(elements: elements)

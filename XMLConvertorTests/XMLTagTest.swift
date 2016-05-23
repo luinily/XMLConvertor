@@ -22,15 +22,15 @@ class XMLTagTest: XCTestCase {
     }
     
 	func testEquatable_Equals() {
-		let a = XMLTag(tag: "a")
+		let a = XMLTag(name: "a")
 		let c = a
 		
 		XCTAssertEqual(a, c)
 	}
 	
 	func testEquatable_notEquals() {
-		let a = XMLTag(tag: "a")
-		let b = XMLTag(tag: "b")
+		let a = XMLTag(name: "a")
+		let b = XMLTag(name: "b")
 		
 		XCTAssertNotEqual(a, b)
 	}

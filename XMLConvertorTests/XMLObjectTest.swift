@@ -22,13 +22,13 @@ class XMLObjectTest: XCTestCase {
     }
 
 	func testContainsElement_true() {
-		let tag = XMLTag(tag: "tag")
+		let tag = XMLTag(name: "tag")
 		let attribute = XMLAttribute(attribute: "attribute", value: "value")
 		let attributes = [attribute]
 		let content = XMLTextContent(text: "content")
 		let element = XMLElement(tag: tag, attributes: attributes, content: content)
 		var elementB = element
-		elementB.tag = XMLTag(tag: "tagB")
+		elementB.tag = XMLTag(name: "tagB")
 		
 		let xmlObject = XMLObject(elements: [element, elementB])
 		
@@ -36,13 +36,13 @@ class XMLObjectTest: XCTestCase {
 	}
 	
 	func testContainsElement_false() {
-		let tag = XMLTag(tag: "tag")
+		let tag = XMLTag(name: "tag")
 		let attribute = XMLAttribute(attribute: "attribute", value: "value")
 		let attributes = [attribute]
 		let content = XMLTextContent(text: "content")
 		let element = XMLElement(tag: tag, attributes: attributes, content: content)
 		var elementB = element
-		elementB.tag = XMLTag(tag: "tagB")
+		elementB.tag = XMLTag(name: "tagB")
 		
 		let xmlObject = XMLObject(elements: [element, element])
 		

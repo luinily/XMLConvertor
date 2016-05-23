@@ -16,14 +16,30 @@ struct XMLRemoveStringRule: XMLConvertionRule {
 	}
 	
 	func  applyRule(xmlPart: XMLPart) -> XMLPart {
+		if let object = xmlPart as? XMLObject {
+			return applyRuleOnXMLObject(object)
+		}
+		
 		if let element = xmlPart as? XMLElement {
-			let elementAfterAttributeFilter = applyRuleOnAttributes(element)
-			let elementAfterContentFilter = applyRuleOnContent(elementAfterAttributeFilter)
-			
-			return elementAfterContentFilter
+			return applyRuleOnXMLElement(element)
 		}
 		
 		return xmlPart
+	}
+	
+	private func applyRuleOnXMLObject(object: XMLObject) -> XMLObject {
+		if let resultObject = applyRuleOnElementContainer(object) as? XMLObject {
+			return resultObject
+		}
+		
+		return object
+	}
+	
+	private func applyRuleOnXMLElement(element: XMLElement) -> XMLElement {
+		let elementAfterAttributeFilter = applyRuleOnAttributes(element)
+		let elementAfterContentFilter = applyRuleOnContent(elementAfterAttributeFilter)
+		
+		return elementAfterContentFilter
 	}
 	
 	private func applyRuleOnAttributes(element: XMLElement) -> XMLElement {
@@ -44,6 +60,7 @@ struct XMLRemoveStringRule: XMLConvertionRule {
 		switch element.content {
 		case is XMLElementContent: return applyRuleOnElementContent(element)
 		case is XMLTextContent: return applyRuleOnTextAttribute(element)
+
 		default: return element
 		}
 	}
@@ -63,16 +80,29 @@ struct XMLRemoveStringRule: XMLConvertionRule {
 	}
 	
 	private func applyRuleOnElementContent(element: XMLElement) -> XMLElement {
-		if var elementContent = element.content as? XMLElementContent {
-			for element in elementContent.elements {
-				if element.tag.tag == _stringToRemove {
-					elementContent.removeElement(element)
-				}
+		if let elementContent = element.content as? XMLElementContent {
+			if let resultContent = applyRuleOnElementContainer(elementContent) as? XMLElementContent {
+				var resultElement = element
+				resultElement.content = resultContent
+				return resultElement
 			}
-			var resultElement = element
-			resultElement.content = elementContent
-			return resultElement
 		}
 		return element
+	}
+	
+	private func applyRuleOnElementContainer(elementContainer: XMLElementContainer) -> XMLElementContainer {
+		var resultElementContainer = elementContainer
+		
+		resultElementContainer.removeAll()
+		for element in elementContainer.getElements() {
+			if element.tag.name == _stringToRemove {
+				//if the element tag is the string we remove the element, no need to re-add it.
+			} else {
+ 			if let element = applyRule(element) as? XMLElement {
+				resultElementContainer.addElement(element)
+				}
+			}
+		}
+		return resultElementContainer
 	}
 }
