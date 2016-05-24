@@ -36,10 +36,30 @@ struct XMLRemoveStringRule: XMLConvertionRule {
 	}
 	
 	private func applyRuleOnXMLElement(element: XMLElement) -> XMLElement {
-		let elementAfterAttributeFilter = applyRuleOnAttributes(element)
+		let elementAfterTagFilter = applyRuleOnTag(element)
+		let elementAfterAttributeFilter = applyRuleOnAttributes(elementAfterTagFilter)
 		let elementAfterContentFilter = applyRuleOnContent(elementAfterAttributeFilter)
 		
 		return elementAfterContentFilter
+	}
+	
+	private func applyRuleOnTag(element: XMLElement) -> XMLElement {
+		if element.tag.name == _stringToRemove {
+			return element
+		}
+		
+		if element.tag.name.containsString(_stringToRemove) {
+			var name = element.tag.name
+			if let range = name.rangeOfString(_stringToRemove) {
+				name.removeRange(range)
+				let newTag = XMLTag(name: name)
+				var resultElement = element
+				resultElement.tag = newTag
+				return resultElement
+			}
+		}
+		
+		return element
 	}
 	
 	private func applyRuleOnAttributes(element: XMLElement) -> XMLElement {
