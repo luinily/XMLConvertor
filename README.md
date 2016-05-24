@@ -9,5 +9,3 @@ Remove string from XML.
 
 Developped using TDD. 
 XMLParser and the ViewController do not have tests yet.
-
-Not finished yet
