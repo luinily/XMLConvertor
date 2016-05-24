@@ -36,10 +36,27 @@ struct XMLRemoveStringRule: XMLConvertionRule {
 	}
 	
 	private func applyRuleOnXMLElement(element: XMLElement) -> XMLElement {
-		let elementAfterAttributeFilter = applyRuleOnAttributes(element)
+		let elementAfterTagFilter = applyRuleOnTag(element)
+		let elementAfterAttributeFilter = applyRuleOnAttributes(elementAfterTagFilter)
 		let elementAfterContentFilter = applyRuleOnContent(elementAfterAttributeFilter)
 		
 		return elementAfterContentFilter
+	}
+	
+	private func applyRuleOnTag(element: XMLElement) -> XMLElement {
+		if element.tag.name == _stringToRemove {
+			return element
+		}
+		
+		if element.tag.name.containsString(_stringToRemove) {
+			let name = removeSringFromString(element.tag.name, stringToRemove: _stringToRemove)
+			var resultElement = element
+			resultElement.tag = XMLTag(name: name)
+			return resultElement
+			
+		}
+		
+		return element
 	}
 	
 	private func applyRuleOnAttributes(element: XMLElement) -> XMLElement {
@@ -47,10 +64,24 @@ struct XMLRemoveStringRule: XMLConvertionRule {
 		for attribute in result.attributes {
 			if attribute.attribute == _stringToRemove {
 				result.removeAttribute(attribute)
+				continue
+			} else if attribute.attribute.containsString(_stringToRemove) {
+				var newAttribute = attribute
+				newAttribute.attribute = removeSringFromString(attribute.attribute, stringToRemove: _stringToRemove)
+				
+				result.removeAttribute(attribute)
+				result.tryAddAttribute(newAttribute)
 			}
 			
 			if attribute.value == _stringToRemove {
 				result.removeAttribute(attribute)
+				continue
+			} else if attribute.value.containsString(_stringToRemove) {
+				var newAttribute = attribute
+				newAttribute.value = removeSringFromString(attribute.value, stringToRemove: _stringToRemove)
+				
+				result.removeAttribute(attribute)
+				result.tryAddAttribute(newAttribute)
 			}
 		}
 		return result
@@ -104,5 +135,13 @@ struct XMLRemoveStringRule: XMLConvertionRule {
 			}
 		}
 		return resultElementContainer
+	}
+	
+	private func removeSringFromString(string: String, stringToRemove: String) -> String {
+		var resultString = string
+		while let range = resultString.rangeOfString(_stringToRemove) {
+			resultString.removeRange(range)
+		}
+		return resultString
 	}
 }
