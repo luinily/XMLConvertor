@@ -49,14 +49,11 @@ struct XMLRemoveStringRule: XMLConvertionRule {
 		}
 		
 		if element.tag.name.containsString(_stringToRemove) {
-			var name = element.tag.name
-			if let range = name.rangeOfString(_stringToRemove) {
-				name.removeRange(range)
-				let newTag = XMLTag(name: name)
-				var resultElement = element
-				resultElement.tag = newTag
-				return resultElement
-			}
+			let name = removeSringFromString(element.tag.name, stringToRemove: _stringToRemove)
+			var resultElement = element
+			resultElement.tag = XMLTag(name: name)
+			return resultElement
+			
 		}
 		
 		return element
@@ -67,10 +64,24 @@ struct XMLRemoveStringRule: XMLConvertionRule {
 		for attribute in result.attributes {
 			if attribute.attribute == _stringToRemove {
 				result.removeAttribute(attribute)
+				continue
+			} else if attribute.attribute.containsString(_stringToRemove) {
+				var newAttribute = attribute
+				newAttribute.attribute = removeSringFromString(attribute.attribute, stringToRemove: _stringToRemove)
+				
+				result.removeAttribute(attribute)
+				result.tryAddAttribute(newAttribute)
 			}
 			
 			if attribute.value == _stringToRemove {
 				result.removeAttribute(attribute)
+				continue
+			} else if attribute.value.containsString(_stringToRemove) {
+				var newAttribute = attribute
+				newAttribute.value = removeSringFromString(attribute.value, stringToRemove: _stringToRemove)
+				
+				result.removeAttribute(attribute)
+				result.tryAddAttribute(newAttribute)
 			}
 		}
 		return result
@@ -124,5 +135,13 @@ struct XMLRemoveStringRule: XMLConvertionRule {
 			}
 		}
 		return resultElementContainer
+	}
+	
+	private func removeSringFromString(string: String, stringToRemove: String) -> String {
+		var resultString = string
+		while let range = resultString.rangeOfString(_stringToRemove) {
+			resultString.removeRange(range)
+		}
+		return resultString
 	}
 }

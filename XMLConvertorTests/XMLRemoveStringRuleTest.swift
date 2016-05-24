@@ -218,13 +218,29 @@ class XMLRemoveStringRuleTest: XCTestCase {
 		XCTAssert(false)
 	}
 	
+	func testRuleREmoveStringFromAttribute() {
+		let tag = XMLTag(name: "tag")
+		let attribute1 = XMLAttribute(attribute: "attribute", value: "value")
+		let attributes = [attribute1]
+		let content = XMLTextContent(text: "content")
+		
+		let element = XMLElement(tag: tag, attributes: attributes, content: content)
+		
+		let rule = XMLRemoveStringRule(stringToRemove: "tt")
+		if let result = rule.applyRule(element) as? XMLElement {
+			XCTAssertEqual(result.attributes.first?.attribute, "aribute")
+		} else {
+			XCTAssert(false)
+		}
+	}
+	
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock {
             // Put the code you want to measure the time of here.
         }
     }
-	
+
 	
 
 }

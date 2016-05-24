@@ -262,11 +262,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XMLConvertor/XMLRemoveStringRule.swift"
-            timestampString = "485789499.164492"
+            timestampString = "485790319.31187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "applyRuleOnTextAttribute(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -278,11 +278,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XMLConvertor/XMLRemoveStringRule.swift"
-            timestampString = "485789499.164492"
+            timestampString = "485790319.31187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "applyRuleOnTextAttribute(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -517,11 +517,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XMLConvertor/XMLRemoveStringRule.swift"
-            timestampString = "485789507.863743"
+            timestampString = "485790319.31187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "applyRuleOnTag(_:)"
             landmarkType = "5">
          </BreakpointContent>
